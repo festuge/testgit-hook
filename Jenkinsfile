@@ -30,5 +30,10 @@ pipeline{
                 echo "end of the parallel job"
             }
         }
+        stage('webhook-fix'){
+            steps{
+                echo "webhook fixed"
+            }
+        }
     }
 }
