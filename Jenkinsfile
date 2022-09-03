@@ -1,19 +1,23 @@
 pipeline{
     agent any
     stages{
-        stage('1-etc_passwd'){
-            steps{
-                sh 'cat /etc/passwd'
+        stage('1-parallel-level){
+            parallel{
+                stage('sub-job'){
+                    steps{
+                        echo "sub-job1 talk"
+                    }
+                }
+                stage('sub-job'){
+                    steps{
+                        echo "sub-job2 talk"
+                    }
+                }
             }
         }
-        stage('1-disc_space'){
+        stage('version-check'){
             steps{
-                sh 'lsblk'
-            }
-        }
-        stage('1-add_to_file'){
-            steps{
-                echo "I am getting there"
+                echo "end of parallel job"
             }
         }
     }
