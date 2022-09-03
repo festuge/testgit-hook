@@ -1,23 +1,23 @@
 pipeline{
     agent any
     stages{
-        stage('1-parallel-level){
+        stage('stage-paralle'){
             parallel{
-                stage('sub-job'){
+                stage('sub-job1'){
                     steps{
-                        echo "sub-job1 talk"
+                        echo "sub-job1 tasl"
                     }
                 }
-                stage('sub-job'){
+                stage('sub-job2'){
                     steps{
-                        echo "sub-job2 talk"
+                        echo "sub-job2 task"
                     }
                 }
             }
         }
         stage('version-check'){
             steps{
-                echo "end of parallel job"
+                echo "end of the parallel job"
             }
         }
     }
