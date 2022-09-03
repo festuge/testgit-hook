@@ -3,18 +3,18 @@ pipeline{
     stages{
         stage('1-etc_passwd'){
             steps{
-                cat /etc/passwd
+                sh 'cat /etc/passwd'
             }
         }
         stage('1-disc_space'){
             step{
-                lsblk
+                sh 'lsblk'
             }
         }
         stage('1-add_to_file'){
             step{
                 echo "I am getting there" >> listics.sh
-                sudo chmod +x listics.sh
+                sh 'sudo chmod +x listics.sh'
                 sh 'listics.sh'
             }
         }
