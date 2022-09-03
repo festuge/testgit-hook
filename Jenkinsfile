@@ -14,8 +14,6 @@ pipeline{
         stage('1-add_to_file'){
             steps{
                 echo "I am getting there"
-                sh 'sudo chmod +x listics.sh'
-                sh 'listics.sh'
             }
         }
     }
